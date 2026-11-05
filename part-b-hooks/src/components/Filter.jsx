@@ -1,0 +1,16 @@
+import React from 'react';
+
+export default function Filter({ current, onChange }) {
+  const types = ['Tất cả', 'Ăn uống', 'Đi lại', 'Học tập', 'Giải trí'];
+  return (
+    <div style={{ marginBottom: '10px' }}>
+      <label> Lọc theo loại: </label>
+      <select value={current} onChange={e => onChange(e.target.value)}>
+        {types.map(t => (
+          <option key={t} value={t}>{t}</option>
+        ))}
+      </select>
+    </div>
+  );
+}
+
