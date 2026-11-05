@@ -7,7 +7,7 @@ class ExpenseForm extends Component {
       description: '',
       amount: '',
       type: 'Ăn uống',
-      date: new Date().toISOString().slice(0, 10), // YYYY-MM-DD
+      date: new Date().toISOString().slice(0, 10),
     };
   }
 
@@ -30,7 +30,6 @@ class ExpenseForm extends Component {
       date,
     };
     this.props.onAdd(newExpense);
-    // reset
     this.setState({ description: '', amount: '', type: 'Ăn uống', date: new Date().toISOString().slice(0, 10) });
   };
 

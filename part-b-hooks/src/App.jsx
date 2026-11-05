@@ -9,7 +9,6 @@ import Total from './components/Total';
 import { ThemeProvider, ThemeContext } from './context/ThemeContext';
 import useFetch from './hooks/useFetch';
 
-// Mock API endpoint (replace with actual mockapi.io URL)
 const API_URL = 'https://6aebebb4ee39618d7bf8a1e9.mockapi.io/expenses';
 
 function App() {
@@ -19,7 +18,6 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const debouncedSearch = useDebounce(searchTerm, 300);
 
-  // Filter by type and search term
   const filteredExpenses = expenses.filter(e => {
     const matchesType = filterType === 'Tất cả' || e.type === filterType;
     const matchesSearch = e.description.toLowerCase().includes(debouncedSearch.toLowerCase());
@@ -28,7 +26,6 @@ function App() {
 
   const total = filteredExpenses.reduce((sum, e) => sum + Number(e.amount), 0);
 
-  // Update document title with total
   useEffect(() => {
     document.title = `Total: ${total}`;
   }, [total]);

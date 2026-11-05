@@ -5,7 +5,6 @@ import ExpenseList from './components/ExpenseList';
 import Filter from './components/Filter';
 import Total from './components/Total';
 
-// Sample data
 const SAMPLE_EXPENSES = [
   { id: 1, description: 'Lunch', amount: 50, type: 'Ăn uống', date: '2023-09-01' },
   { id: 2, description: 'Bus ticket', amount: 20, type: 'Đi lại', date: '2023-09-02' },
@@ -17,7 +16,7 @@ class App extends Component {
     super(props);
     this.state = {
       expenses: SAMPLE_EXPENSES,
-      filterType: 'Tất cả', // all types
+      filterType: 'Tất cả',
     };
   }
 

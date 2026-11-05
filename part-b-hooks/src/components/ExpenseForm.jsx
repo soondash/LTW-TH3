@@ -20,12 +20,10 @@ export default function ExpenseForm({ onAdd }) {
       date,
     };
     await onAdd(newExpense);
-    // reset fields
     setDescription('');
     setAmount('');
     setType('Ăn uống');
     setDate(new Date().toISOString().slice(0, 10));
-    // focus description input
     descRef.current?.focus();
   };
 
